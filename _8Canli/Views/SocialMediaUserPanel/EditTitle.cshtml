@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Title
+
+@{
+    ViewBag.Title = "EditTitle";
+    Layout = "~/Views/Shared/_SocialMediaUserLayout.cshtml";
+}
+
+<h2>Başlık Güncelleme Sayfası</h2>
+@using (Html.BeginForm("EditTitle", "SocialMediaUserPanel", FormMethod.Post))
+{
+
+    <div class="form-group">
+        <br />
+        @Html.HiddenFor(x => x.TitleId) <!--Başlık id gizledim-->
+        @Html.HiddenFor(x=>x.TitleDate)
+        @Html.HiddenFor(x=>x.SocialMediaUserId)
+        @Html.Label("Başlık Adı")
+        @Html.TextBoxFor(x => x.TitleName, new { @class = "form-control" })
+   
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

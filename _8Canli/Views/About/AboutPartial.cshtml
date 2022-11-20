@@ -1,0 +1,31 @@
+﻿
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    <!--POPUP TASARIMI-->
+    Yeni Hakkımızda Yazı Girişi
+</button>
+<div class="modal" id="Modal1">
+    <!-- id, data-target ile aynı olmak ZORUNDADIR.-->
+    <div class="modal-dialog">
+        <!--AÇILAN POPUP TASARIMI-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Hakkımızda Metin Girişi</h2>
+            </div>
+            <form method="post" action="/About/AddAbout">
+                <label>Hakkımızda Metin 1</label>
+                <input type="text" name="AboutDetail1" class="form-control" /><!--name'ler About tablosundaki column isimleriyle aynı olmalıs'-->
+                <br />
+                <label>Hakkımızda Metin 2</label>
+                <input type="text" name="AboutDetail2" class="form-control" />
+                <br />
+                <label>Hakkımızda Görsel 1</label>
+                <input type="text" name="AboutImage1" class="form-control" />
+                <br />
+                <label>Hakkımızda Görsel 2</label>
+                <input type="text" name="AboutImage2" class="form-control" />
+                <br />
+                <button class="btn btn-info">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

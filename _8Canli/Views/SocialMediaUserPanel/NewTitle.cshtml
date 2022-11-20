@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Title
+@{
+    ViewBag.Title = "NewTitle";
+    Layout = "~/Views/Shared/_SocialMediaUserLayout.cshtml";
+}
+
+<h2>Yeni Başlık Ekleme</h2>
+<br />
+@using (Html.BeginForm("NewTitle", "SocialMediaUserPanel", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Başlık adı")
+        @Html.TextBoxFor(x => x.TitleName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.TitleName)
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+      
+
+        <button class="btn btn-info">Başlık Ekle</button>
+    </div>
+
+}
